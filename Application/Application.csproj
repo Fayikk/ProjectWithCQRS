@@ -16,13 +16,10 @@
 		</PackageReference>
 	</ItemGroup>
   <ItemGroup>
-    <Folder Include="Features\Languages\Commands\" />
     <Folder Include="Features\Languages\Constants\" />
-    <Folder Include="Features\Languages\Dtos\" />
     <Folder Include="Features\Languages\Models\" />
     <Folder Include="Features\Languages\Rules\" />
     <Folder Include="Features\Languages\Queries\" />
-    <Folder Include="Features\Languages\Profiles\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core.Application\Core.Application.csproj" />

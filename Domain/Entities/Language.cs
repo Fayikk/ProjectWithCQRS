@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Core.Persistence.Repositoriess;
 
-namespace Domain
+namespace Domain.Entities
 {
     public class Language : Entity
     {
@@ -16,7 +16,7 @@ namespace Domain
         {
 
         }
-        public Language(int id,string name)
+        public Language(int id, string name)
         {
             Id = id;
             Name = name;

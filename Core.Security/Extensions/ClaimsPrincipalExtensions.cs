@@ -1,5 +1,7 @@
-﻿using System.Security.Claims;
+﻿
 
+using System.Security.Claims;
+namespace Core.Security.Extensions;
 public static class ClaimsPrincipalExtensions
 {
     public static List<string>? Claims(this ClaimsPrincipal claimsPrincipal, string claimType)

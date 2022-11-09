@@ -1,6 +1,6 @@
 ﻿using Application.Services;
 using Core.Persistence.Repositoriess;
-using Domain;
+using Domain.Entities;
 using Persistence.Context;
 using System;
 using System.Collections.Generic;

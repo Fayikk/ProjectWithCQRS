@@ -1,4 +1,4 @@
-﻿using Domain;
+﻿using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -37,8 +37,8 @@ namespace Persistence.Context
 
 
 
-            Language[] brandEntitySeeds = { new(1, "C#"), new(2, "Java") };
-            modelBuilder.Entity<Language>().HasData(brandEntitySeeds);
+            Language[] languageEntitySeeds = { new(1, "C#"), new(2, "Java") };
+            modelBuilder.Entity<Language>().HasData(languageEntitySeeds);
 
 
         }
