@@ -1,4 +1,5 @@
-﻿using Application.Features.Languages.Dtos;
+﻿using Application.Features.Languages.Dtos.ForLanguage;
+using Application.Features.Languages.Rules;
 using Application.Services;
 using AutoMapper;
 using Domain.Entities;
@@ -18,17 +19,19 @@ namespace Application.Features.Languages.Commands.CreateLanguage
         {
             private readonly ILanguageRepository _languageRepository;//sonradan değeri değiştirlemez
             private readonly IMapper _mapper;
+            private readonly LanguageBusinessRules _languageBusinessRules;
             /*private readonly BrandBusinessRules _brandBusinessRules*/
 
-            public CreateLanguageCommandHandler(ILanguageRepository languageRepository, IMapper mapper)
+            public CreateLanguageCommandHandler(ILanguageRepository languageRepository, IMapper mapper, LanguageBusinessRules languageBusinessRules)
             {
                 _languageRepository = languageRepository;
                 _mapper = mapper;   
+                _languageBusinessRules = languageBusinessRules;
             }
 
             public async Task<CreatedLanguageDto> Handle(CreateLanguageCommand request, CancellationToken cancellationToken)
             {
-                //await _brandBusinessRules.BrandNameCanNotBeDuplicatedWhenInserted(request.Name);
+                await _languageBusinessRules.LanguageNameCanNotBeRepeat(request.Name);
 
 
                 Language mappedLanguage = _mapper.Map<Language>(request);
