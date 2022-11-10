@@ -15,6 +15,8 @@ namespace Application.Features.Languages.Commands.CreateLanguage
     public partial class CreateLanguageCommand : IRequest<CreatedLanguageDto>
     {
         public string Name { get; set; }
+   
+
         public class CreateLanguageCommandHandler : IRequestHandler<CreateLanguageCommand, CreatedLanguageDto>
         {
             private readonly ILanguageRepository _languageRepository;//sonradan değeri değiştirlemez

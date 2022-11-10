@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Persistence.Context
 {
@@ -13,6 +14,7 @@ namespace Persistence.Context
     {
         protected IConfiguration Configuration { get; set; }
         public DbSet<Language> Languages { get; set; }
+        public DbSet<LanguageTechnology> LanguageTechnologies { get; set; }
 
         public BaseDbContext(DbContextOptions dbContextOptions,IConfiguration configuration) : base(dbContextOptions)
         {
@@ -33,15 +35,35 @@ namespace Persistence.Context
                 a.ToTable("Languages").HasKey(k => k.Id); //Priamry key configurartion
                 a.Property(p => p.Id).HasColumnName("Id"); //Other configuration
                 a.Property(p => p.Name).HasColumnName("Name");
+
+                a.HasMany(p => p.LanguageTechnologies);
             });
 
 
 
+            modelBuilder.Entity<LanguageTechnology>(a =>
+            {
+
+                a.ToTable("LanguageTechnologies").HasKey(k => k.Id); //Priamry key configurartion
+                a.Property(p => p.Id).HasColumnName("Id"); //Other configuration
+               
+                a.Property(p => p.LanguageId).HasColumnName("LanguageId");
+
+                a.Property(p => p.Name).HasColumnName("Name");
+
+                a.HasOne(p => p.Language);
+            });
+            
+
             Language[] languageEntitySeeds = { new(1, "C#"), new(2, "Java") };
             modelBuilder.Entity<Language>().HasData(languageEntitySeeds);
 
+            LanguageTechnology[] languageTechnologyEntitySeeds = { new(3,1, "Asp.net") };
+            modelBuilder.Entity<LanguageTechnology>().HasData(languageTechnologyEntitySeeds);
+
 
         }
+      
 
     }
 }

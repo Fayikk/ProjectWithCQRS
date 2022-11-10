@@ -19,5 +19,11 @@
     <ProjectReference Include="..\Core.Application\Core.Application.csproj" />
     <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Features\LanguageTechnologies\Commands\DeleteLanguageTechnology\" />
+    <Folder Include="Features\LanguageTechnologies\Commands\UpdateLanguageTechnology\" />
+    <Folder Include="Features\LanguageTechnologies\Constants\" />
+    <Folder Include="Features\LanguageTechnologies\Rules\" />
+  </ItemGroup>
 
 </Project>

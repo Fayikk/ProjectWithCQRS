@@ -1,4 +1,5 @@
 ﻿using Application.Services;
+using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -21,6 +22,7 @@ namespace Persistence
                                                      options.UseSqlServer(
                                                          configuration.GetConnectionString("SoftwareCoursesConnectionString")));
             services.AddScoped<ILanguageRepository, LanguageRepository>();//Enjeksiyon işlemini burada gerçekleştiriyoruz.
+            services.AddScoped<ILanguageTecnologyRepository, LanguageTechnologyRepository>();//Enjeksiyon işlemini burada gerçekleştiriyoruz.
             //Yani birisi sende IBrandRepository verirse sen ona Brand Repository ver anlamına gelmektedir.
             return services;
         }

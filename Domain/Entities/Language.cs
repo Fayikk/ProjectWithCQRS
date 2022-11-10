@@ -12,6 +12,8 @@ namespace Domain.Entities
         //Base Class
 
         public string Name { get; set; }
+        public virtual ICollection<LanguageTechnology> LanguageTechnologies { get; set; }
+
         public Language()
         {
 
