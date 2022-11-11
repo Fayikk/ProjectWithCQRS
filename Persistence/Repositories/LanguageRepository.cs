@@ -1,6 +1,7 @@
 ﻿using Application.Services;
 using Core.Persistence.Repositoriess;
 using Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 using Persistence.Context;
 using System;
 using System.Collections.Generic;
@@ -18,3 +19,4 @@ namespace Persistence.Repositories
         }
     }
 }
+

@@ -15,6 +15,10 @@ namespace Persistence.Context
         protected IConfiguration Configuration { get; set; }
         public DbSet<Language> Languages { get; set; }
         public DbSet<LanguageTechnology> LanguageTechnologies { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<OperationClaim> OperationClaims { get; set; }
+        public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
+        public DbSet<RefreshToken> RefreshTokens { get; set; }
 
         public BaseDbContext(DbContextOptions dbContextOptions,IConfiguration configuration) : base(dbContextOptions)
         {

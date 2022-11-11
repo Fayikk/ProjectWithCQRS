@@ -24,7 +24,6 @@
 	</ItemGroup>
 	<ItemGroup>
 		<Folder Include="Pipelines\Caching\" />
-		<Folder Include="Pipelines\Authorization\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <ProjectReference Include="..\Core.CrossCuttingConcerns\Core.CrossCuttingConcerns.csproj" />
