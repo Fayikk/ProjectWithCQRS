@@ -29,7 +29,7 @@ namespace Persistence
             services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
             services.AddScoped<IOperationClaimRepository, OperationClaimRepository>();
             services.AddScoped<IUserOperationClaimRepository, UserOperationClaimRepository>();
-
+            services.AddScoped<IGithubRepository, GithubRepository>();
             //Yani birisi sende IBrandRepository verirse sen ona Brand Repository ver anlamına gelmektedir.
             return services;
         }

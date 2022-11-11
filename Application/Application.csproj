@@ -20,6 +20,8 @@
     <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Features\Githubs\Constants\" />
+    <Folder Include="Features\Githubs\Rules\" />
     <Folder Include="Features\LanguageTechnologies\Constants\" />
     <Folder Include="Features\LanguageTechnologies\Rules\" />
   </ItemGroup>

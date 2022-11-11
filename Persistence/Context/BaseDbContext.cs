@@ -19,6 +19,7 @@ namespace Persistence.Context
         public DbSet<OperationClaim> OperationClaims { get; set; }
         public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
         public DbSet<RefreshToken> RefreshTokens { get; set; }
+        public DbSet<Github> Githubs { get; set; }
 
         public BaseDbContext(DbContextOptions dbContextOptions,IConfiguration configuration) : base(dbContextOptions)
         {
@@ -57,7 +58,18 @@ namespace Persistence.Context
 
                 a.HasOne(p => p.Language);
             });
-            
+
+
+            modelBuilder.Entity<Github>(a =>
+            {
+
+                a.ToTable("Githubs").HasKey(k => k.Id); //Priamry key configurartion
+                a.Property(p => p.Id).HasColumnName("Id"); //Other configuration
+                a.Property(p => p.Account).HasColumnName("Account");
+
+                //a.HasMany(p => p.LanguageTechnologies);
+            });
+
 
             Language[] languageEntitySeeds = { new(1, "C#"), new(2, "Java") };
             modelBuilder.Entity<Language>().HasData(languageEntitySeeds);
@@ -65,6 +77,8 @@ namespace Persistence.Context
             LanguageTechnology[] languageTechnologyEntitySeeds = { new(3,1, "Asp.net") };
             modelBuilder.Entity<LanguageTechnology>().HasData(languageTechnologyEntitySeeds);
 
+            Github[] githubEntitySeeds = { new(1,"github/Fayikk") };
+            modelBuilder.Entity<Github>().HasData(githubEntitySeeds);
 
         }
       
