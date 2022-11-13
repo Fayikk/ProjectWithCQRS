@@ -1,6 +1,7 @@
 ﻿using System.Linq.Expressions;
 using Core.Persistence.Dynamic;
 using Core.Persistence.Pagging;
+using Core.Persistence.Repositories;
 //using Core.Persistence.Paging;
 using Microsoft.EntityFrameworkCore.Query;
 public interface IAsyncRepository<T> : IQuery<T> where T : Entity

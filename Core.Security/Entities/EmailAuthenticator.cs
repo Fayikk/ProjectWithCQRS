@@ -1,5 +1,7 @@
 ﻿
 
+using Core.Persistence.Repositories;
+
 public class EmailAuthenticator : Entity
 {
     public int UserId { get; set; }

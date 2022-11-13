@@ -111,7 +111,7 @@ namespace Persistence.Migrations
                         });
                 });
 
-            modelBuilder.Entity("OperationClaim", b =>
+            modelBuilder.Entity("OperationClaims", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -256,7 +256,7 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("UserOperationClaim", b =>
                 {
-                    b.HasOne("OperationClaim", "OperationClaim")
+                    b.HasOne("OperationClaims", "OperationClaims")
                         .WithMany()
                         .HasForeignKey("OperationClaimId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -268,7 +268,7 @@ namespace Persistence.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("OperationClaim");
+                    b.Navigation("OperationClaims");
 
                     b.Navigation("User");
                 });

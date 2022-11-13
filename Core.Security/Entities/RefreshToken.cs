@@ -1,4 +1,6 @@
-﻿public class RefreshToken : Entity
+﻿using Core.Persistence.Repositories;
+
+public class RefreshToken : Entity
 {
     public int UserId { get; set; }
     public string Token { get; set; }

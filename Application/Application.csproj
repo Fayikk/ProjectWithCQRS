@@ -24,6 +24,10 @@
     <Folder Include="Features\Githubs\Rules\" />
     <Folder Include="Features\LanguageTechnologies\Constants\" />
     <Folder Include="Features\LanguageTechnologies\Rules\" />
+    <Folder Include="Features\OperationClaim\Commands\DeleteOperationClaim\" />
+    <Folder Include="Features\OperationClaim\Commands\UpdateOperationClaim\" />
+    <Folder Include="Features\OperationClaim\Constants\" />
+    <Folder Include="Features\OperationClaim\Rules\" />
   </ItemGroup>
 
 </Project>

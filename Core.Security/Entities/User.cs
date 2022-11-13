@@ -1,4 +1,5 @@
-﻿using Core.Security.Enums;
+﻿using Core.Persistence.Repositories;
+using Core.Security.Enums;
 
 public class User : Entity
 {

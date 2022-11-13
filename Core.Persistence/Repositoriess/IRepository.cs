@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore.Query;
 using System.Linq.Expressions;
 using Core.Persistence.Dynamic;
+using Core.Persistence.Repositories;
 
 public interface IRepository<T> : IQuery<T> where T : Entity
 {

@@ -1,4 +1,5 @@
 ﻿using Core.Persistence.Pagging;
+using Core.Security.Entities;
 using Core.Security.JWT;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -35,8 +36,8 @@ namespace Application.Services.AuthService
                                                                 include: u =>
                                                                     u.Include(u => u.OperationClaim)
                );
-            IList<OperationClaim> operationClaims =
-                userOperationClaims.Items.Select(u => new OperationClaim
+            IList<OperationClaims> operationClaims =
+                userOperationClaims.Items.Select(u => new OperationClaims
                 { Id = u.OperationClaim.Id, Name = u.OperationClaim.Name }).ToList();
 
             AccessToken accessToken = _tokenHelper.CreateToken(user, operationClaims);

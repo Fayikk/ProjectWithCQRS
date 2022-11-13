@@ -1,4 +1,5 @@
-﻿using Domain.Entities;
+﻿using Core.Security.Entities;
+using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -16,7 +17,7 @@ namespace Persistence.Context
         public DbSet<Language> Languages { get; set; }
         public DbSet<LanguageTechnology> LanguageTechnologies { get; set; }
         public DbSet<User> Users { get; set; }
-        public DbSet<OperationClaim> OperationClaims { get; set; }
+        public DbSet<OperationClaims> OperationClaims { get; set; }
         public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
         public DbSet<RefreshToken> RefreshTokens { get; set; }
         public DbSet<Github> Githubs { get; set; }

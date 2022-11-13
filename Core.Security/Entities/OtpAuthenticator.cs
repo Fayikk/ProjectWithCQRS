@@ -1,4 +1,6 @@
-﻿public class OtpAuthenticator : Entity
+﻿using Core.Persistence.Repositories;
+
+public class OtpAuthenticator : Entity
 {
     public int UserId { get; set; }
     public byte[] SecretKey { get; set; }

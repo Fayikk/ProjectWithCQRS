@@ -1,13 +1,21 @@
-﻿public class OperationClaim : Entity
+﻿using Core.Persistence.Repositories;
+
+
+
+namespace Core.Security.Entities
 {
-    public string Name { get; set; }
-
-    public OperationClaim()
+    public class OperationClaims : Entity
     {
-    }
+        public string Name { get; set; }
 
-    public OperationClaim(int id, string name) : base(id)
-    {
-        Name = name;
+        public OperationClaims()
+        {
+        }
+
+        public OperationClaims(int id, string name) : base(id)
+        {
+            Name = name;
+        }
     }
 }
+
